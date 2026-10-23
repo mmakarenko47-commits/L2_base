@@ -1,0 +1,15 @@
+function wave(str){
+  let result=[];
+  for(let i=0;i<str.length;i++)
+    {
+      if(str[i]==' ')
+        {
+          continue;
+        }
+      let leftPart=str.slice(0,i);
+      let upperChar=str[i].toUpperCase();
+      let rightPart=str.slice(i+1);
+      result.push(leftPart+upperChar+rightPart);
+    }
+  return result;
+}

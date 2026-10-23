@@ -1,0 +1,18 @@
+function whatCentury(year)
+{
+  let yearNum=Number(year);
+  let century=Math.floor((yearNum-1)/100)+1;
+  let suffix='th';
+  if(century%100>=11&&century%100<=13)
+    {
+      suffix='th';
+    }
+    else
+      {
+        let lastDigit=century%10;
+        if(lastDigit===1)suffix='st';
+        else if(lastDigit===2)suffix='nd';
+        else if(lastDigit===3)suffix='rd';
+      }
+  return century+suffix;
+}

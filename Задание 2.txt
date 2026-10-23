@@ -1,0 +1,17 @@
+function ipv4Parser(ip, mask)
+{
+  var ipArr = ip.split('.');
+  var maskArr = mask.split('.');
+  var net = [];
+  var host = [];
+  for (var i = 0; i < 4; i++) 
+  {
+    var ipNum = Number(ipArr[i]);
+    var maskNum = Number(maskArr[i]);
+    var netNum = ipNum & maskNum;
+    net.push(netNum);
+    var hostNum = ipNum - netNum;
+    host.push(hostNum);
+  }
+   return [net.join('.'), host.join('.')];
+}

@@ -1,0 +1,16 @@
+function expandedForm(num) {
+  let str = String(num);
+  let parts = [];
+
+  for (let i = 0; i < str.length; i++) 
+  {
+    if (str[i] == '0') 
+    {
+      continue;
+    }
+    let zerosCount = str.length - i - 1;
+    let currentPart = str[i] + '0'.repeat(zerosCount);
+    parts.push(currentPart);
+  }
+  return parts.join(' + ');
+}

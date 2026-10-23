@@ -1,0 +1,26 @@
+function toWeirdCase(string){
+  let result='';
+  let wordIndex=0;
+  for(let i=0;i<string.length;i++)
+    {
+      let char=string[i];
+      if(char==' ')
+        {
+          result+=' ';
+          wordIndex=0;
+        }
+        else
+          {
+            if(wordIndex%2==0)
+              {
+                result+=char.toUpperCase();
+              }
+              else
+                {
+                  result+=char.toLowerCase();
+                }
+            wordIndex++;
+          }
+    }
+  return result;
+}
